@@ -23,12 +23,12 @@
     <h3><strong>Type:</strong> {{ $project->type->name }}</h3>
     @endif
 
-    @if ($project->technologies() == [])
-        <h4><strong>Technologies:</strong>
+    @if ($project->technologies->count() != 0)
+        <h3><strong>Technologies:</strong>
             @foreach ($project->technologies as $tech)
                 <span class="badge rounded-pill text-bg-success">{{ $tech->name }}</span>
             @endforeach
-        </h4>
+        </h3>
     @endif
 
     @if ($project->cover_image)

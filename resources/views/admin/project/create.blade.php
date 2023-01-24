@@ -44,6 +44,13 @@
                 </select>
             </div>
             <div class="mb-3">
+                <label class="form-label">Technologies used</label><br>
+                @foreach ($technologies as $tech)
+                    <input class="form-check-input" type="checkbox" name="technologies[]" value="{{ $tech->id }}" id="{{ $tech->slug }}" @if(in_array($tech->id, old('technologies', []))) checked @endif>
+                    <label class="form-check-label me-3" for="{{ $tech->slug }}">{{ $tech->name }}</label>
+                @endforeach
+            </div>
+            <div class="mb-3">
                 <label for="cover_image" class="form-label">Cover image</label>
                 <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{old('cover_image')}}" onchange="showImage(event)">
                 @error('cover_image')
