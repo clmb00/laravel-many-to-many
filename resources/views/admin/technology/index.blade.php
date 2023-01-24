@@ -46,7 +46,7 @@
 
                         </td>
 
-                        <td class="text-center"><span class="badge text-bg-secondary fs-4">{{ count($tech->projects) }}</span></td>
+                        <td class="text-center"><span class="badge text-bg-secondary fs-4">{{ count($technology->projects) }}</span></td>
 
                     </tr>
                 @empty
