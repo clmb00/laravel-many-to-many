@@ -30,6 +30,11 @@
         </div>
         <div class="d-flex gap-1" style="width: 80%;">
             <li class="nav-item btn btn-outline-light btn-lg w-100">
+                <a class="nav-link" href="{{ route('admin.technologies.index') }}"><i class="fa-solid fa-file-lines"></i><br>Technologies</a>
+            </li>
+        </div>
+        <div class="d-flex gap-1" style="width: 80%;">
+            <li class="nav-item btn btn-outline-light btn-lg w-100">
                 <a class="nav-link" href="{{ url('/admin/profile') }}"><i class="fa-solid fa-user"></i><br>Profile</a>
             </li>
         </div>
