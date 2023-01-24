@@ -29,6 +29,7 @@
                     </a>
                 </th>
                 <th scope="col">Summary</th>
+                <th scope="col">Techs</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -51,6 +52,16 @@
                         <td>
                             <div style="height: 50px; overflow:auto;">
                                 {!! $project->summary !!}
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="d-flex flex-column gap-2">
+                                @forelse ($project->technologies as $tech)
+                                    <span class="badge rounded-pill text-bg-dark">{{ $tech->name }}</span>
+                                @empty
+                                    No tech
+                                @endforelse
                             </div>
                         </td>
 

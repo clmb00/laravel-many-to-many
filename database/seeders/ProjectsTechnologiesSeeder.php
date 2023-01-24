@@ -16,10 +16,15 @@ class ProjectsTechnologiesSeeder extends Seeder
      */
     public function run()
     {
+        $store = [];
         for ($i=0; $i < 50; $i++) {
             $rnd_project = Project::inRandomOrder()->first();
             $rnd_tech_id = Technology::inRandomOrder()->first()->id;
-            $rnd_project->technologies()->attach($rnd_tech_id);
+            if(!array_search("$rnd_project->id-$rnd_tech_id", $store)){
+                array_push($store, "$rnd_project->id-$rnd_tech_id");
+                $rnd_project->technologies()->attach($rnd_tech_id);
+            }
         }
+        dump($store);
     }
 }
