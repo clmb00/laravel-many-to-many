@@ -20,7 +20,15 @@
     <h3><strong>Client Name:</strong> {{ $project->client_name }}</h3>
 
     @if ($project->type)
-        <h3><strong>Type:</strong> {{ $project->type->name }}</h3>
+    <h3><strong>Type:</strong> {{ $project->type->name }}</h3>
+    @endif
+
+    @if ($project->technologies() == [])
+        <h4><strong>Technologies:</strong>
+            @foreach ($project->technologies as $tech)
+                <span class="badge rounded-pill text-bg-success">{{ $tech->name }}</span>
+            @endforeach
+        </h4>
     @endif
 
     @if ($project->cover_image)

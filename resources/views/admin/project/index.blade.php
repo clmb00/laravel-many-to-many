@@ -60,7 +60,7 @@
                                 @forelse ($project->technologies as $tech)
                                     <span class="badge rounded-pill text-bg-dark">{{ $tech->name }}</span>
                                 @empty
-                                    No tech
+                                    <span class="badge rounded-pill text-bg-secondary">No Tech</span>
                                 @endforelse
                             </div>
                         </td>
